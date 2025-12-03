@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="utf-8"><title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">ATM SYSTEM</div>
+    <div class="nav-right">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/balance}">Balance</a>
+        <a th:href="@{/deposit}">Deposit</a>
+        <a th:href="@{/withdraw}">Withdraw</a>
+        <a th:href="@{/transfer}">Transfer</a>
+
+        <!-- logout form with CSRF token -->
+        <form th:action="@{/logout}" method="post" style="display:inline">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <button type="submit" class="theme-btn">Logout</button>
+        </form>
+
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>Dashboard</h2>
+        <p>Logged in as: <strong th:text="${userId}">USER</strong></p>
+
+        <div class="menu">
+            <a th:href="@{/balance}">Check Balance</a>
+            <a th:href="@{/deposit}">Deposit</a>
+            <a th:href="@{/withdraw}">Withdraw</a>
+            <a th:href="@{/transfer}">Transfer</a>
+        </div>
+
+        <div th:if="${success}" class="message success" th:text="${success}"></div>
+        <div th:if="${error}" class="message error" th:text="${error}"></div>
+    </div>
+</div>
+
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

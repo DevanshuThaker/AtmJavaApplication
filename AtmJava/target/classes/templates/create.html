@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="utf-8"><title>Create User</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">ATM SYSTEM</div>
+    <div class="nav-right">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Login</a>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>Create New User</h2>
+        <form th:action="@{/create}" method="post">
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <label>PIN (4 digits)</label>
+            <input type="password" name="pin" pattern="\d{4}" required>
+
+            <button class="btn" type="submit">Create</button>
+        </form>
+    </div>
+</div>
+
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

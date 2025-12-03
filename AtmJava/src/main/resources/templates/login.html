@@ -1,0 +1,36 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"><title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">ATM SYSTEM</div>
+    <div class="nav-right">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/create}">Create</a>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>Login</h2>
+        <form th:action="@{/login}" method="post">
+            <label>User ID</label>
+            <input type="text" name="userID" required>
+
+            <label>PIN</label>
+            <input type="password" name="userPIN" required>
+
+            <button class="btn" type="submit">Sign in</button>
+        </form>
+
+        <p class="muted" style="margin-top:10px">Don't have account? <a th:href="@{/create}">Create one</a></p>
+    </div>
+</div>
+
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

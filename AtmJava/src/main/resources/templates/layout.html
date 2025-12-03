@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM System</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">ATM SYSTEM</div>
+
+    <div class="nav-right">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Login</a>
+        <a th:href="@{/create}">Create User</a>
+
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</div>
+
+<!-- THIS IS WHERE PAGE CONTENT WILL LOAD -->
+<div class="page">
+    <th:block th:replace="${content}"></th:block>
+</div>
+
+<script th:src="@{/js/theme.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="utf-8"><title>Created</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">ATM SYSTEM</div>
+    <div class="nav-right">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Login</a>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>Account Created</h2>
+        <p>User ID: <strong th:text="${userId}">UID</strong></p>
+        <p>Account No: <strong th:text="${accNo}">ACC</strong></p>
+        <a th:href="@{/login}" class="btn">Login</a>
+    </div>
+</div>
+
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

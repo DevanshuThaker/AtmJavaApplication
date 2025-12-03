@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>ATM - Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">ATM SYSTEM</div>
+    <div class="nav-right">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/login}">Login</a>
+        <a th:href="@{/create}">Create</a>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card hero">
+        <div style="flex:1">
+            <h1>Welcome to the ATM Management System</h1>
+            <p class="muted">Quick demo: create account, login, deposit, withdraw, transfer.</p>
+            <div style="margin-top:18px;">
+                <a th:href="@{/login}" class="btn">Login</a>
+                <a th:href="@{/create}" class="btn secondary" style="margin-left:10px">Create New User</a>
+            </div>
+        </div>
+        <div style="width:260px;text-align:center">
+            <img src="https://i.imgur.com/8Km9tLL.png" alt="atm" style="width:100%;opacity:0.9;border-radius:10px">
+        </div>
+    </div>
+
+    <div class="footer">Running locally — remember to hard-refresh after changes.</div>
+</div>
+
+<script th:src="@{/js/theme.js}"></script>
+</body>
+</html>
